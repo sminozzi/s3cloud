@@ -1,25 +1,36 @@
-=== s3 cloud File Manager ===
+# WordPress s3 Contabo Object Storage Cloud File Manager Plugin #
 Contributors: sminozzi
-Tags: s3cloud, Contabo, s3 cloud, S3, cloud, Browse 
+Tags: s3cloud, Contabo, s3 cloud, S3, cloud Browse 
 Requires at least: 5.2
-Tested up to: 6.1
-Stable tag: 2.15
+Tested up to: 6.6
+Stable tag: 2.36
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-S3 Cloud is a tool for WordPress and provides you ability to Delete Files or Folders and Create Folders on your S3 Cloud and Download/Upload Files from/to your computer on S3 Contabo object storage.
-You can also transfer folders to/from your server and your S3 cloud.
+## S3 Contabo Cloud Manager Files: Easily delete, download or upload files or folders between S3 Contabo object storage and your server or computer. ##
 == Description ==
 **s3 Cloud Plugin**
 ★★★★★<br>
 >This plugin connect you with your Contabo S3-compatible Object Storage, using S3-compatible API.
 >If the file exists on destination, will be overwrited.
 
-This tool provides you ability to Download, Delete, Upload and Create Folders on S3 Contabo object storage.
-The files will be uploaded and download from/to your local computer directly to your S3 storage space. You don’t have to upload files to your server first anymore. Then, without occupying server storage. You can also make transfer from / to your server to your cloud s3 account.
+Effortless S3 Contabo Management:
 
-In this version, the upload and download file size are limited to 100 Mb and the transfer from/to your cloud are limited a 1GB.
-We are working to increase this limit and the new version will be available soon.
+This plugin simplifies managing your S3 Contabo object storage. Upload, download, delete, and create folders directly within your S3 storage, eliminating the need for server uploads.
+
+==Flexible File Transfers:==
+
+Move files seamlessly between your server, local computer, and S3 Contabo storage, without occupying server storage. Enjoy current transfer limits of 1GB per file, with larger capacities coming soon!
+
+==Granular Backups with Reduced Restoration Time:==
+
+Perform complete backups of your website to your S3 storage. Unlike traditional backups, you can restore individual files or folders quickly, minimizing the amount of data needed and reducing the time and the risk of overwriting recent changes.
+
+==Free and Easy Site Migrations:==
+
+Move or clone your website with ease, without paying any fees and without downtime between hostings, even if your current hosting provider doesn't offer cPanel/Plesk or you're migrating to a different domain and hosting altogether.
+
+<a href="https://s3cloudplugin.com">Learn More at Plugin Site</a>
 
 == Important ==
 
@@ -29,20 +40,28 @@ Run only one instance of this plugin each time.
 
 PHP Memory Limit:         256M
 WordPress Memory Limit:   256M
-Upload Max Size:          120M
-Post Max Size:            120M
-Upload Max Filesize:      120M
+Upload Max Size:          1000M
+Post Max Size:            1000M
+Upload Max Filesize:      1000M
 Enable the php-curl module in your PHP setup
 
-To know your server  info, install our free plugin WPTOOLS.
+If you use nginx, aAdd following code to nginx.conf:
+
+http {
+        client_max_body_size 1000M;
+}
+
+To know your server  info, install our free plugin WPTOOLS anc contact your host company.
 
 
 == Multisite ==
 This plugin was not tested with Multisite. 
 
-<a href="https://s3cloudplugin.com">Learn more at Plugin Site</a>
 
-<a href="https://toolsfors3">Free Plugin for Amazon AWS S3 Object Storage</a>
+
+<a href="https://s3cloud.com">Free Plugin for Amazon AWS S3 Object Storage</a>
+
+<a href="https://s3cloudplugin.com/cloning-or-moving-site/">Cloning or Moving Site Without Downtime </a>
 
 <a href="https://s3cloudplugin.com/help/">Online Documentation</a>
 
@@ -53,7 +72,11 @@ This plugin was not tested with Multisite.
 <a href="https://siterightaway.net/troubleshooting/">Plugin Troubleshooting</a>
 
 <a href="https://database-backup.com/">Free Plugin to Generate a site database file for Backup</a>
-This easy to use free plugin (database-backup) can generate a database backup file with just one click. 
+This easy to use free plugin (database-backup) can generate a database backup file with just one click.
+
+<a href="https://bigdumprestore.com/">Free Plugin to Restore a large or very large site database file</a>
+This easy to use free plugin (bigdump-restore) can instal the bigdump.php free script to friendly restore your database backup.
+ 
 
 == Screenshots ==
 1. Dashboard 
@@ -79,6 +102,15 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 == Frequently Asked Questions ==
 
+=Can I do a Complete Backup to Cloud with this plugin?=
+Yes, sure. Read this page with complete details:
+<a href="https://s3cloudplugin.com/backup-your-site/">Complete Backup Instructions</a>
+
+=Can I move or clone my site without paying any fees and without downtime?=
+Yes, sure. Read this page with complete details:
+<a href="https://s3cloudplugin.com/cloning-or-moving-site/">Complete Move Instructions</a>
+
+
 =How to Install?=
 
 1) Install via wordpress.org
@@ -94,26 +126,27 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 
 Depends of your computer and server, Server memory, internet connection and the S3 cloud service.
 
-== Tags ==
-s3 cloud
-s3 compatible
-object storage
-wordpress object storage
-s3cloud
-s3 contabo
-contabo object storage
-contabo s3 api
-object storage contabo
-contabo s3 storage
-contabo backup space
-contabo backup
-contabo
-contabo wordpress
-contabo cloud
-contabo storage
+=Got Error 4XX to Upload File from Desktop to Cloud=
+If you got "413 Request Entity Too Large - File Upload Issue" or similar, 
+usually is a question of server upload tunning. Look the Server Requirements above.
+Sometines, large files upload are also blocked by Mod Security on your server.
+
 
 
 == Changelog ==
+2024-07-18   - Version 2.36 - Small Improvements
+2024-07-17   - Version 2.33/35 - Small Improvements
+2024-07-12   - Version 2.32 - Small Improvements
+2024-07-11   - Version 2.31 - Security Improvement
+2024-05-20   - Version 2.25 - Small Improements at readme file
+2024-03-26   - Version 2.24 - Small Improements
+2024-01-17   - Version 2.23 - Fixed Javascript error "modal..."
+2023-12-27   - Version 2.22 - Improved error management.
+2023-10-17   - Version 2.21 - Improved error management.
+2023-09-05   - Version 2.20 - Improved error management.
+2023-08-30   - Version 2.19 - Improved error management.
+2023-08-29   - Version 2.17/18 - Improved error management.
+2023-03-08   - Version 2.16 - Increased Upload and Download Limit.
 2023-02-05   - Version 2.15 - Increased Transfer Limit to 1Gb and small improvements
 2023-01-27   - Version 2.11/2.14 - Fixed small bugs
 2023-01-21   - Version 2.09/2.10 - Fixed small bugs
